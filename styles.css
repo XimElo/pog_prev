@@ -1,0 +1,434 @@
+/* =========================
+   VARIABLES DE COLOR
+========================= */
+:root {
+  --rosa-base: #ea899a;
+  --rosa-claro: #f4b6c1;
+  --rosa-muy-claro: #fdecef;
+  --rosa-oscuro: #d46b7e;
+  --gris-texto: #3a3a3a;
+}
+
+/* =========================
+   ESTILOS GENERALES
+========================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--gris-texto);
+
+  background: linear-gradient(
+    180deg,
+    var(--rosa-muy-claro) 0%,
+    #ffffff 45%
+  );
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.sub {
+  margin-top: 6px;
+  color: #666;
+  font-size: 1rem;
+}
+
+/* =========================
+   BOTONES DE TIENDA
+========================= */
+.tiendas {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.btn-tienda {
+  background: #fff;
+  border: 1.5px solid var(--rosa-base);
+  border-radius: 14px;
+  padding: 15px 25px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(234, 137, 154, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Botón de tienda activo */
+.btn-tienda.activo {
+  background: var(--rosa-base);
+  color: white;
+  box-shadow: 0 8px 24px rgba(234, 137, 154, 0.45);
+  transform: translateY(-6px);
+}
+
+.btn-tienda.activo span {
+  color: white;
+}
+
+.btn-tienda:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(234, 137, 154, 0.35);
+}
+
+.btn-tienda img {
+  width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.btn-tienda span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--rosa-oscuro);
+}
+
+/* =========================
+   FILTROS
+========================= */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: white;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 18px;
+  max-width: 1200px;
+  box-shadow: 0 6px 20px rgba(234, 137, 154, 0.25);
+  align-items: center;
+  justify-content: center;
+}
+
+.filtro-grupo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filtro-grupo span {
+  font-weight: 600;
+  color: var(--gris-texto);
+}
+
+/* Chips / botones de filtro */
+.filtro-btn {
+  border: 1.5px solid var(--rosa-base);
+  background: white;
+  color: var(--rosa-oscuro);
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.filtro-btn:hover {
+  background: var(--rosa-muy-claro);
+}
+
+.filtro-btn.activo {
+  background: var(--rosa-base);
+  color: white;
+}
+
+/* Botón limpiar filtros */
+.btn-limpiar {
+  background: var(--rosa-oscuro);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.btn-limpiar:hover {
+  background: #c85f72;
+}
+
+/* =========================
+   GRID DE EXHIBIDORES
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+.card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(234, 137, 154, 0.15);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(234, 137, 154, 0.25);
+}
+
+/* Imagen dentro de la tarjeta */
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Texto dentro de la tarjeta */
+.info {
+  padding: 15px;
+}
+
+.info h3 {
+  margin: 0 0 5px;
+  font-size: 1rem;
+  color: var(--gris-texto);
+}
+
+.info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* =========================
+   BUSCADOR
+========================= */
+.buscador {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.buscador input {
+  width: 100%;
+  max-width: 420px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  border: 1.5px solid var(--rosa-base);
+  font-size: 1rem;
+  outline: none;
+  background: white;
+  color: var(--gris-texto);
+  box-shadow: 0 4px 12px rgba(234, 137, 154, 0.25);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.buscador input::placeholder {
+  color: #999;
+}
+
+.buscador input:focus {
+  border-color: var(--rosa-oscuro);
+  box-shadow: 0 6px 20px rgba(234, 137, 154, 0.35);
+}
+
+/* =========================
+   MENSAJE SIN RESULTADOS
+========================= */
+.grid p {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--rosa-oscuro);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 40px;
+}
+
+/* ===== Ajustes finos de tarjetas ===== */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card img {
+  max-height: 180px;
+  object-fit: contain;
+  background: #fff;
+  padding: 10px;
+}
+
+.info h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.info p {
+  font-size: 0.8rem;
+  color: var(--rosa-oscuro);
+  word-break: break-all;
+}
+
+/* ===== Mejora visual botones tienda ===== */
+.btn-tienda {
+  width: 160px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-tienda img {
+  width: 90px;
+  height: auto;
+}
+
+.btn-tienda span {
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* =========================
+   TOP BAR (VOLVER / ITEMS / LIMPIAR)
+========================= */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 14px 20px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(234, 137, 154, 0.25);
+}
+
+/* Botones de la barra */
+.top-bar button {
+  border: 1.5px solid var(--rosa-base);
+  background: white;
+  color: var(--rosa-oscuro);
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.top-bar button:hover {
+  background: var(--rosa-muy-claro);
+}
+
+/* Botón volver (menos protagonista) */
+.top-bar button:first-child {
+  border-color: #ccc;
+  color: #555;
+}
+
+/* Botón limpiar filtros (acción importante) */
+.top-bar button:last-child {
+  background: var(--rosa-oscuro);
+  color: white;
+  border-color: var(--rosa-oscuro);
+}
+
+.top-bar button:last-child:hover {
+  background: #c85f72;
+}
+
+/* Contador de items */
+.top-bar span {
+  font-weight: 600;
+  color: var(--gris-texto);
+  background: var(--rosa-muy-claro);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+
+/* =========================
+   RESPONSIVE – MÓVIL
+========================= */
+@media (max-width: 768px) {
+
+  /* Grid: una sola columna */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 16px;
+  }
+
+  /* Cards más grandes */
+  .card {
+    border-radius: 20px;
+  }
+
+  /* Imagen MUCHO más grande */
+  .card img {
+    max-height: 320px;
+    padding: 16px;
+  }
+
+  /* Texto más legible */
+  .info h3 {
+    font-size: 1.1rem;
+  }
+
+  .info p {
+    font-size: 0.9rem;
+  }
+}
+/* =========================
+   ZOOM DE IMÁGENES
+========================= */
+.zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.zoom-overlay img {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Mostrar overlay */
+.zoom-overlay.activo {
+  display: flex;
+}
+
+/* Cursor bonito */
+.card img {
+  cursor: zoom-in;
+}
+
+.zoom-overlay img {
+  transition: transform 0.2s ease;
+}
+``
+
+
